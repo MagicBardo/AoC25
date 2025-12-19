@@ -27,6 +27,9 @@ MagicBardo/
 
 If you are interested in testing my solutions yourself, feel free to download the project and use it for yourself, but please not for commercial stuff ... if it would even be good enough for that ...
 
+## Taks: 
+[ ] Finish Task 1.2
+
 ## Link:
 
 Here's the link to the Advent of Code 2025 page:
