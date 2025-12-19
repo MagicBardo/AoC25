@@ -17,7 +17,7 @@ def main():
     }
     zero_pos_count = 0
     curr_pos = dial_info["start"]
-    file_path = "./input.txt"
+    file_path = "./AoC25_1_1/input.txt"
 
     lines = get_file_input(file_path)
     for line in lines:
@@ -28,7 +28,7 @@ def main():
             rot_am = get_rotation_amount(line)
             curr_pos = (curr_pos - rot_am + 100) % dial_info["positions"]
         else:
-            raise "Unexpected line: Couldn't find 'R' or 'L'!"
+            raise "Unexpected line: Couldn't find 'R' or 'L'!" # type: ignore
 
         if curr_pos == 0:
             zero_pos_count += 1
