@@ -1,7 +1,7 @@
 # Advent_of_Code25
 My solutions for the Advent of Code of the year 2025
 
-INTRO:
+## Intro:
 
 Hello, World!
 In here, I'm trying to solve the Advent of Code tasks and show my working steps.
@@ -11,8 +11,8 @@ As you might think now, I mainly work in Python for this.
 
 For me, maybe coming back later on and solving some tasks again in a different language, I created a main folder with the programming language name as the title. 
 
-STRUCTURE:
-
+## Structure:
+"""
 MagicBardo/
   Advent_of_Code25/
     Python/
@@ -21,13 +21,13 @@ MagicBardo/
       task1.2/
         main.py
       task...
+"""
 
-
-DOWNLOAD / USE:
+## Download / Usage:
 
 If you are interested in testing my solutions yourself, feel free to download the project and use it for yourself, but please not for commercial stuff ... if it would even be good enough for that ...
 
-LINK:
+## Link:
 
 Here's the link to the Advent of Code 2025 page:
 https://adventofcode.com/2025
