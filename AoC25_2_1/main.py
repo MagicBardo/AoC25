@@ -16,7 +16,7 @@ def id_check(start, end) -> int:
     return ans
 
 def main():
-    file_path = Path(__file__).parent / "../inputs/day2.txt"
+    file_path = Path(__file__).parent / "../inputs/test.txt"
     ranges = get_ranges(file_path)
     solution = 0
     for distance in ranges:
@@ -26,7 +26,7 @@ def main():
 
     print(f"answer: {solution}")
 
-# 1227775554 <- expected
+# 40214376723 <- expected
 
 if __name__ == "__main__":
     main()
