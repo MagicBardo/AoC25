@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def get_file_input(file_name):
     with open(file_name) as f:
         lines = f.readlines()
@@ -18,7 +20,7 @@ def main():
     zero_pos_count = 0
     extra_zero_count = 0
     curr_pos = dial_info["start"]
-    file_path = "./AoC25_1_2/input.txt"
+    file_path = Path(__file__).parent / "../inputs/day1.txt"
 
     lines = get_file_input(file_path)
     for line in lines:

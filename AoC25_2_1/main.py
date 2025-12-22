@@ -6,24 +6,17 @@ def get_ranges(file_path:str) -> list:
 
 def id_check(start:int, end:int) -> int:
     ans = 0
-    for num in range(start, end+1):
-        num = str(num)
-        for seq_len in range(0, len(num)):
-            seq = num[seq_len]
-            if num.count(seq) == 2:
-                pass
+
 
     return ans
 
 def main():
     file_path:str = "./AoC25_2_1/input.txt"
     ranges:list = get_ranges(file_path)
-    for range in ranges:
-        start:int = int((range.split('-'))[0])
-        end:int = int((range.split('-'))[1])
-        solutions = id_check(start, end)
-
-    print(f"Answer: {ans}")
+    for distance in ranges:
+        start:int = int((distance.split('-'))[0])
+        end:int = int((distance.split('-'))[1])
+        solutions:int = id_check(start, end)
 
 
 if __name__ == "__main__":

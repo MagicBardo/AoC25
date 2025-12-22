@@ -15,20 +15,18 @@ MagicBardo/
   AoC25/
     AoC25_1_1/
       main.py
-      input.txt
     AoC25_1_2/
       main.py
-      input.txt
     AoC25_2_1/
       main.py
-      input.txt
     AoC25_.../
       ...
 ~~~
 
 ## Download / Usage:
 
-If you are interested in testing my solutions *yourself*, feel free to download the project and use it for yourself, but please not for commercial stuff ... if it would even be good enough for that ...
+If you are interested in testing my solutions *yourself*, feel free to download the project and use it for yourself, but please not for commercial stuff ... if it would even be good enough for that ... <br>
+Note that the input for each task is available on the AoC25 Website (**link**) and needs to be put into a file by yourself before using my code. You also may need to change the file path to your specific location.
 
 ## Link:
 
