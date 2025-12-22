@@ -1,4 +1,5 @@
 from pathlib import Path
+import math
 
 def get_ranges(file_path) -> list:
     with open(file_path) as f:
@@ -9,10 +10,16 @@ def id_check(start, end) -> int:
     ans = 0
     for num in range(start, end+1):
         num = str(num)
-        if num[0] != 0 and len(num) % 2 == 0:
-            seq = num[:len(num) // 2]
-            if num.count(seq) == 2:
-                ans += int(num)
+        if num[0] != 0:
+            seqs = []
+            for i in range(1, len(num)):
+                seqs.append(num[:i])
+            for seq in seqs:
+                print(seqs)
+                print(len(num) / len(seq))
+                if math.remainder(len(num), len(seq)) == 0.0:
+                    ans += int(seq)
+
     return ans
 
 def main():

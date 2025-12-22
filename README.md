@@ -13,6 +13,10 @@ As you might think now, I mainly work in Python for this.
 ~~~
 MagicBardo/
   AoC25/
+    inputs/
+        day1.txt
+        day2.txt
+        ...
     AoC25_1_1/
       main.py
     AoC25_1_2/
