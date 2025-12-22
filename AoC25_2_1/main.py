@@ -1,23 +1,32 @@
-def get_ranges(file_path:str) -> list:
+from pathlib import Path
+
+def get_ranges(file_path) -> list:
     with open(file_path) as f:
-        line:str = f.readline()
-        ranges = line.split(',')
+        ranges = (f.readline()).split(',')
     return ranges
 
-def id_check(start:int, end:int) -> int:
+def id_check(start, end) -> int:
     ans = 0
-
-
+    for num in range(start, end+1):
+        num = str(num)
+        if num[0] != 0 and len(num) % 2 == 0:
+            seq = num[:len(num) // 2]
+            if num.count(seq) == 2:
+                ans += int(num)
     return ans
 
 def main():
-    file_path:str = "./AoC25_2_1/input.txt"
-    ranges:list = get_ranges(file_path)
+    file_path = Path(__file__).parent / "../inputs/day2.txt"
+    ranges = get_ranges(file_path)
+    solution = 0
     for distance in ranges:
-        start:int = int((distance.split('-'))[0])
-        end:int = int((distance.split('-'))[1])
-        solutions:int = id_check(start, end)
+        start = int((distance.split('-'))[0])
+        end = int((distance.split('-'))[1])
+        solution += id_check(start, end)
 
+    print(f"answer: {solution}")
+
+# 1227775554 <- expected
 
 if __name__ == "__main__":
     main()
