@@ -15,11 +15,9 @@ def id_check(start, end) -> int:
             if num[0] != 0 and seperator <= len(num):
                 pos_seq.append(num[:seperator])
                 seperator += 1
-                # 824824824
         for seq in pos_seq:
             if num.count(seq) >= 2 and len(seq) * num.count(seq) == len(num):
                 ans += int(num)
-                print("in between answer:", ans, "last added number", num, "with sequence", seq, "\n")
                 break
     return ans
 
@@ -33,8 +31,6 @@ def main():
         solution += id_check(start, end)
 
     print(f"answer: {solution}")
-
-# expected -> 4174379265
 
 if __name__ == "__main__":
     main()
