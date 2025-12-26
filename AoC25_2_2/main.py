@@ -1,5 +1,4 @@
 from pathlib import Path
-import math
 
 def get_ranges(file_path) -> list:
     with open(file_path) as f:
@@ -9,21 +8,23 @@ def get_ranges(file_path) -> list:
 def id_check(start, end) -> int:
     ans = 0
     for num in range(start, end+1):
+        seperator = 1
+        pos_seq = []
         num = str(num)
-        if num[0] != 0:
-            seqs = []
-            for i in range(1, len(num)):
-                seqs.append(num[:i])
-            for seq in seqs:
-                print(seqs)
-                print(len(num) / len(seq))
-                if math.remainder(len(num), len(seq)) == 0.0:
-                    ans += int(seq)
-
+        for i in range(len(num)):
+            if num[0] != 0 and seperator <= len(num):
+                pos_seq.append(num[:seperator])
+                seperator += 1
+                # 824824824
+        for seq in pos_seq:
+            if num.count(seq) >= 2 and len(seq) * num.count(seq) == len(num):
+                ans += int(num)
+                print("in between answer:", ans, "last added number", num, "with sequence", seq, "\n")
+                break
     return ans
 
 def main():
-    file_path = Path(__file__).parent / "../inputs/test.txt"
+    file_path = Path(__file__).parent / "../inputs/day2.txt"
     ranges = get_ranges(file_path)
     solution = 0
     for distance in ranges:
@@ -33,7 +34,7 @@ def main():
 
     print(f"answer: {solution}")
 
-# 4174379265 <- expected
+# expected -> 4174379265
 
 if __name__ == "__main__":
     main()
