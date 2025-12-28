@@ -5,25 +5,30 @@ def get_input(file_path) -> list:
         lines = [s.strip("\n") for s in f.readlines()]
     return lines
 
+def find_max(joltages):
+    max_value = 0
+    max_index = 0
+    for i, joltage in enumerate(joltages):
+        if joltage > max_value:
+            max_value = joltage
+            max_index = i
+    return  max_value, max_index
+
 def main():
-    file_path = Path(__file__).parent / "../inputs/test.txt"
-    solution = 0
+    file_path = Path(__file__).parent / "../inputs/day3.txt"
+    answer = 0
     banks = get_input(file_path)
-    greatest_sums = []
-    print(banks)
     for bank in banks:
-        pos_sum = []
-        for joltage in bank:
-            for i in range(len(bank)):
-                if bank[i] != joltage:
-                    pos_sum.append(joltage + bank[i])
-        print(max(pos_sum))
-        greatest_sums.append(max(pos_sum))
+        comb = 0
+        joltages = [int(num) for num in bank]
+        digit1, i1 = find_max(joltages[:-1])
+        digit2 = max(joltages[1+i1:])
+        comb = 10 * digit1 + digit2
+        print(comb)
+        answer += comb
 
-    for greatest_sum in greatest_sums:
-        print(greatest_sum)
-
-    print("answer:", solution)
+    print("answer:", answer)
+    # 357
 
 if __name__ == '__main__':
     main()
