@@ -14,21 +14,25 @@ def find_max(joltages):
             max_index = i
     return  max_value, max_index
 
+def final(bank, k):
+    joltages = [int(num) for num in bank]
+    N = len(joltages)
+    offset = 0
+    ans = 0
+    for j in range(k):
+        subjoltages = joltages[offset:N - (k - j - 1)]
+        digit, max_i = find_max(subjoltages)
+        offset += max_i + 1
+        ans += digit * 10**(k - j - 1)
+    return ans
+
 def main():
     file_path = Path(__file__).parent / "../inputs/day3.txt"
     answer = 0
     banks = get_input(file_path)
     for bank in banks:
-        comb = 0
-        joltages = [int(num) for num in bank]
-        digit1, i1 = find_max(joltages[:-1])
-        digit2 = max(joltages[1+i1:])
-        comb = 10 * digit1 + digit2
-        print(comb)
-        answer += comb
-
+        answer += final(bank, 12)
     print("answer:", answer)
-    # 3121910778619
 
 if __name__ == '__main__':
     main()

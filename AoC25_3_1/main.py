@@ -24,7 +24,6 @@ def main():
         digit1, i1 = find_max(joltages[:-1])
         digit2 = max(joltages[1+i1:])
         comb = 10 * digit1 + digit2
-        print(comb)
         answer += comb
 
     print("answer:", answer)
